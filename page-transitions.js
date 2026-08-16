@@ -6,9 +6,10 @@
     body.rma-page-ready { opacity: 1; transform: translateY(0); }
     body.rma-page-leaving { opacity: 0; transform: translateY(-30px); pointer-events: none; }
     .rma-nav-dropdown { position: relative; display: inline-flex; align-items: center; }
-    .rma-nav-trigger { appearance: none; border: 0; padding: 0; background: transparent; color: #ddd; font: inherit; font-size: .96rem; cursor: pointer; display: inline-flex; gap: 4px; align-items: center; }
-    .rma-nav-trigger::after { content: '⌄'; color: #d700ff; font-size: 1rem; transition: transform .18s ease; }
-    .rma-nav-dropdown.is-open .rma-nav-trigger::after { transform: rotate(180deg); }
+    .rma-nav-trigger { appearance: none; border: 0; outline: 0; padding: 0; background: transparent; color: #ddd; font: inherit; font-size: .96rem; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+    .rma-nav-trigger::after { content: ''; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .18s ease; }
+    .rma-nav-trigger:focus-visible { outline: 2px solid #d700ff; outline-offset: 5px; border-radius: 3px; }
+    .rma-nav-dropdown.is-open .rma-nav-trigger::after { transform: rotate(225deg) translateY(-1px); }
     .rma-nav-menu { position: absolute; z-index: 30; top: calc(100% + 12px); left: -14px; width: 176px; display: grid; gap: 3px; padding: 8px; border: 1px solid #4e315e; border-radius: 14px; background: #1b1420; box-shadow: 0 18px 36px #0008; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: .18s ease; }
     .rma-nav-dropdown.is-open .rma-nav-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     nav .rma-nav-menu a { padding: 10px 11px; border-radius: 9px; color: #eee; font-size: .9rem; text-decoration: none; }
