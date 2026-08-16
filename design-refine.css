@@ -17,4 +17,10 @@
 .show-card { min-height: 0; aspect-ratio: 16 / 9; border-radius: 16px; background: #090b22; box-shadow: 0 12px 28px #00000028; }
 .show-card img { object-fit: cover; transform: scale(1.012); transition: transform .25s ease; }
 .show-card:hover img { transform: scale(1.045); }
+.no-thumbnail { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(135deg, #23064d, #08152d 74%); }
+.no-thumbnail::before, .no-thumbnail::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+.no-thumbnail::before { width: 104px; height: 104px; top: -47px; right: 56px; background: linear-gradient(135deg, #bc3cff, #6911ed); opacity: .95; }
+.no-thumbnail::after { width: 205px; height: 205px; right: -104px; bottom: -124px; border: 21px solid #b900ff; opacity: .88; }
+.no-thumbnail img { position: relative; z-index: 1; width: 48%; height: auto; max-height: 58px; object-fit: contain; }
+.source-label { position: absolute; z-index: 1; left: 18px; bottom: 16px; color: #d5c2ed; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 @media (max-width: 800px) { .section { padding-block: 54px; } .story-grid { grid-template-columns: 1fr; } .story { min-height: 355px; } }
