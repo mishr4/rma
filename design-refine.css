@@ -1,0 +1,20 @@
+/* A calmer, consistent editorial rhythm for cards and programme art. */
+.section { padding-block: 74px; }
+.section-heading { margin-bottom: 24px; }
+.story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.story { min-height: 396px; border-radius: 16px; box-shadow: 0 12px 32px #00000026; }
+.art { height: 196px; }
+.orbital { position: relative; background: radial-gradient(circle at 72% 22%, #ba42ff 0 5%, transparent 5.5%), radial-gradient(circle at 72% 22%, #7a16ef 0 15%, transparent 15.5%), linear-gradient(135deg, #1a0539, #11122e 63%, #071222); }
+.orbital::after { content: ""; position: absolute; width: 240px; height: 240px; right: -84px; bottom: -130px; border: 22px solid #b000ff; border-radius: 50%; opacity: .72; }
+.orbital img { position: relative; z-index: 1; width: 54%; height: 58%; object-fit: contain; }
+.dusk { background: linear-gradient(135deg, #271534, #8753ca 105%); color: #fff; }
+.neon { background: linear-gradient(135deg, #1038ff, #00a5ff); }
+.dusk .material-symbols-rounded, .neon .material-symbols-rounded { font-size: 72px; }
+.story-content { padding: 19px 18px 18px; }
+.story h3 { font-size: 1.38rem; line-height: 1.05; }
+.story p:not(.tag) { font-size: .97rem; }
+.show-grid { gap: 20px; }
+.show-card { min-height: 0; aspect-ratio: 16 / 9; border-radius: 16px; background: #090b22; box-shadow: 0 12px 28px #00000028; }
+.show-card img { object-fit: cover; transform: scale(1.012); transition: transform .25s ease; }
+.show-card:hover img { transform: scale(1.045); }
+@media (max-width: 800px) { .section { padding-block: 54px; } .story-grid { grid-template-columns: 1fr; } .story { min-height: 355px; } }
