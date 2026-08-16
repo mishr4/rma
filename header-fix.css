@@ -1,0 +1,18 @@
+/* Header refinement: keeps the identity present without overpowering the page. */
+.topbar { height: 84px; }
+.brand img { width: 112px; height: 34px; }
+.watch-button {
+  min-width: 164px;
+  height: 46px;
+  padding: 0 18px;
+  justify-content: center;
+  line-height: 1;
+}
+.watch-button .material-symbols-rounded {
+  display: block;
+  font-size: 20px;
+  line-height: 1;
+}
+@media (max-width: 800px) {
+  .brand img { width: 100px; height: 30px; }
+}
