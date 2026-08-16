@@ -1,0 +1,30 @@
+/* The home hero is a feature card, not a floating background effect. */
+.hero {
+  min-height: 560px;
+  margin-top: 18px;
+  padding: 104px 8% 78px;
+  border: 1px solid #35204d;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #151018 0%, #130d24 48%, #0b1121 100%);
+  box-shadow: 0 24px 70px #0000004d;
+}
+.signal { border-radius: 0; box-shadow: none; filter: none; }
+.signal-one {
+  width: 68%; height: 118%; right: -5%; top: -10%; opacity: .96;
+  background: linear-gradient(130deg, #5d12cb 0%, #d300ee 52%, #7e16cb 100%);
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 82%, 12% 42%);
+}
+.signal-one::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(125deg, transparent 34%, #f3a5ff75 51%, transparent 65%);
+}
+.signal-two {
+  width: 57%; height: 27%; right: 0; bottom: 0; opacity: .62;
+  background: linear-gradient(90deg, transparent, #15072a 10%, #020714 100%);
+  clip-path: polygon(22% 100%, 48% 0, 100% 0, 100% 100%);
+}
+@media (max-width: 800px) {
+  .hero { min-height: 500px; margin-top: 8px; padding: 76px 7% 58px; border-radius: 20px; }
+  .signal-one { width: 100%; right: -35%; }
+  .signal-two { width: 90%; }
+}
