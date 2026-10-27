@@ -16,6 +16,7 @@ const footer=`<footer class="rma-footer"><div class="rma-footer-top"><div class=
 for(const file of (await readdir(root)).filter(f=>f.endsWith('.html'))){
   let html=await readFile(join(root,file),'utf8');
   html=html.replace(/<details class="network-identity">[\s\S]*?<\/details><a class="rma-skip"[^>]*>[\s\S]*?<\/a>/g,'');
+  html=html.replace(/<a class="rma-skip"[^>]*>[\s\S]*?<\/a>/g,'');
   html=html.replace(/<header\b[\s\S]*?<\/header>/i,header(file)).replace(/<footer\b[\s\S]*?<\/footer>/i,footer);
   html=html.replace(/<details class="network-identity">[\s\S]*?<\/details>/g,'');
   html=html.replace(/<script src="(?:material-icons|mavion-identity)\.js[^\"]*" defer><\/script>/g,'').replace('</head>','<script src="material-icons.js?v=1" defer></script><script src="mavion-identity.js?v=1" defer></script></head>');

@@ -3,6 +3,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');let checks=0;co
 for(const file of(await readdir(root)).filter(f=>f.endsWith('.html'))){
  const html=await readFile(join(root,file),'utf8');
  check((html.match(/class="rma-header"/g)||[]).length===1,file+' one shared header');
+ check((html.match(/class="rma-skip"/g)||[]).length===1,file+' one skip link after repeated builds');
  check((html.match(/class="rma-footer"/g)||[]).length===1,file+' one shared footer');
  check(html.includes('mavion-identity.js?v=1')&&!html.includes('class="network-identity"'),file+' actual shared identity');
  check(html.includes('material-icons.js?v=1'),file+' Material SVGs');
